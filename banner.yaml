@@ -4,6 +4,7 @@
   connection: network_cli
   gather_facts: false
   tasks:
+  
     - name: Add configure the login banner
       ios_banner: 
       
