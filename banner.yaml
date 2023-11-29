@@ -6,14 +6,14 @@
   tasks:
     - name: Add configure the login banner
       ios_banner: 
-       banner: exec
-       text: |
+        banner: exec
+        text: |
          ****************************************************
          * Welcome to Ansible AWX Tower Network Automation  *
          *                      Thank You                   *
          *    Aaqib Javaid Khan |TAC Engineer| CYBERNET     *
          ****************************************************
-       state: present 
+        state: present 
     - name: save running to start-config when modified
       ios_config:
-       save_when: modified
+        save_when: modified
