@@ -1,20 +1,19 @@
 ---
-- name: Configure banner on Cisco router
+- name: Configure the login banner
   hosts: ios_devices
-  gather_facts: no
   connection: network_cli
+  gather_facts: false
   tasks:
-    - name: Configure login banner
-      cisco.ios.ios_banner:
-        banner: login
-        text: |
-          ****************************************************
+    - name: Add configure the login banner
+      ios_banner: 
+       banner: exec
+       text: |
+         ****************************************************
          * Welcome to Ansible AWX Tower Network Automation  *
          *                      Thank You                   *
          *    Aaqib Javaid Khan |TAC Engineer| CYBERNET     *
          ****************************************************
-      register: banner_result
-
-    - name: Print banner configuration result
-      debug:
-        var: banner_result
+       state: present 
+    - name: save running to start-config when modified
+      ios_config:
+       save_when: modified
