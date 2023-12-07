@@ -1,6 +1,6 @@
 ---
 - name: Configure the login banner
-  hosts: ios_devices
+  hosts: iosxr
   connection: network_cli
   gather_facts: false
 
