@@ -1,20 +1,20 @@
 ---
 - name: Configure the login banner
-  hosts: iosxr
+  hosts: ios
   connection: network_cli
   gather_facts: false
 
   tasks:
-    - name: Configure the login banner
+    - name: Add configure the login banner
       ios_banner: 
         banner: login
         text: |
          ****************************************************
-         * Welcome to Ansible AWX Tower Network Automation  *
-         *                      Thank You                   *
+         *    Welcome to AWX Ansible Network Atomation      *
+         *                     Thank You                    *
          *    Aaqib Javaid Khan |TAC Engineer| CYBERNET     *
          ****************************************************
         state: present 
     - name: save running to startup
       ios_config:
-        save_when: modified
+        save_when: modified                                                    
