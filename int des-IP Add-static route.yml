@@ -1,0 +1,68 @@
+---
+- name: configure Ansible-Router-1
+  hosts: Ansible-Router-1
+  gather_facts: false
+  tasks:
+  - name: Interface Description
+    ios_interfaces: 
+      config:
+        - name: Ethernet0/0
+          description: 'Primary WAN Interface'
+          enabled: true
+        - name: Ethernet0/1
+          description: 'Backup WAN Interface'
+  - name: Set IP address on Backup WAN Interface
+    ios_l3_interface:
+     name: Ethernet0/1
+     ipv4: 192.168.100.1/30
+  - name: Configure Static Route
+    ios_static_route:
+     prefix: 0.0.0.0
+     mask: 0.0.0.0
+     next_hop: 192.168.134.1
+
+- name: configure Ansible-Router-3725
+  hosts: Ansible-Router-3725
+  gather_facts: false
+  tasks:
+  - name: Interface Description
+    ios_interfaces: 
+      config:
+        - name: FastEthernet0/0
+          description: 'Primary WAN Interface'
+          enabled: true
+        - name: FastEthernet0/1
+          description: 'Backup WAN Interface'
+  - name: Set IP address on Backup WAN Interface
+    ios_l3_interface:
+     name: FastEthernet0/1
+     ipv4: 192.168.100.2/30
+  - name: Configure Static Route
+    ios_static_route:
+     prefix: 0.0.0.0
+     mask: 0.0.0.0
+     next_hop: 192.168.134.1
+
+- name: configure 7206-R
+  hosts: 7206-R
+  gather_facts: false
+  tasks:
+  - name: Interface Description
+    ios_interfaces: 
+       config:
+        - name: FastEthernet0/0
+          description: 'Primary WAN Interface'
+          enabled: true
+        - name: Ethernet1/0
+          description: 'Backup WAN Interface'
+  - name: Set IP address on Backup WAN Interface
+    ios_l3_interface:
+     name: Ethernet1/0
+     ipv4: 192.168.100.3/30
+  - name: Configure Static Route
+    ios_static_route:
+     prefix: 0.0.0.0
+     mask: 0.0.0.0
+     next_hop: 192.168.134.1
+
+   
