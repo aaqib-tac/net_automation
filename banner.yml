@@ -3,11 +3,10 @@
   hosts: ios
   connection: network_cli
   gather_facts: false
-
   tasks:
-    - name: Add configure the login banner
+    - name: Add login banner
       ios_banner: 
-        banner: login
+        banner: exec
         text: |
          ****************************************************
          *    Welcome to AWX Ansible Network Atomation      *
@@ -15,6 +14,6 @@
          *    Aaqib Javaid Khan |TAC Engineer| CYBERNET     *
          ****************************************************
         state: present 
-    - name: save running to startup
+    - name: save running to startup-config when modified
       ios_config:
         save_when: modified                                                    
