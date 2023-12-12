@@ -6,8 +6,8 @@
   tasks:
     - name: Add login banner
       ios_banner: 
-      banner: exec
-      text: |
+       banner: exec
+       text: |
          ****************************************************
          *    Welcome to AWX Ansible Network Atomation      *
          *                     Thank You                    *
