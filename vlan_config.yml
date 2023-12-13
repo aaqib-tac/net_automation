@@ -12,8 +12,8 @@
   - name: Making Interface 
     ios_l2_interfaces:
       config:
-      - name: Ethernet0/1
-        trunk:
+       - name: Ethernet0/1
+         trunk:
           allowed_vlans: 10,20,20,30,40
           native_vlan: 10
           encapsulation: dot1q
