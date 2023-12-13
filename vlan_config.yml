@@ -4,12 +4,12 @@
   connection: network_cli
   gather_facts: false
   tasks:
-#  - name: configure VLAN_ID
-#    ios_config:
- #    lines:
-  #     - vlan {{ vlan_id }}
+  - name: configure VLAN_ID
+    ios_config:
+    lines:
+       - vlan {{ vlan_id }}
   
-  - name: Making Interface 
+  - name: Making Interface {{interface}} trunk and allow VLAN {{vlan_id}}
     ios_l2_interfaces:
       config:
        - name: Ethernet0/1
