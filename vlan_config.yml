@@ -6,7 +6,7 @@
   tasks:
   - name: configure VLAN_ID
     ios_config:
-    lines:
+     lines:
        - vlan {{ vlan_id }}
   
   - name: Making Interface {{interface}} trunk and allow VLAN {{vlan_id}}
