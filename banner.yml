@@ -5,7 +5,7 @@
   gather_facts: false
   tasks:
     - name: Add login banner
-      ios_banner: 
+      cisco.ios.ios_banner: 
        banner: exec
        text: |
          ****************************************************
