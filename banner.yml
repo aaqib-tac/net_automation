@@ -5,7 +5,7 @@
   gather_facts: false
   tasks:
     - name: Add login banner
-      cisco.ios.ios_banner: 
+      ios_banner: 
         banner: login
         text: |
           ****************************************************
@@ -15,5 +15,5 @@
           ****************************************************
         state: present 
     - name: save running to startup-config when modified
-      cisco.ios.ios_config:
+      ios_config:
         save_when: modified                                                    
