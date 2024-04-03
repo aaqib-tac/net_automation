@@ -1,6 +1,6 @@
 ---
 - name: Merge provided configuration with device configuration
-  cisco.ios.ios_vlans:
+  ios_vlans:
     config:
       - name: Vlan_10
         vlan_id: 10
