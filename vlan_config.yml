@@ -1,5 +1,7 @@
 ---
 - name: Merge provided configuration with device configuration
+  host: ios
+  connection: network_cli
   ios_vlans:
     config:
       - name: Vlan_10
