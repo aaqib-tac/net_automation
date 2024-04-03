@@ -1,6 +1,6 @@
 ---
 - name: Merge provided configuration with device configuration
-  host: ios
+  hosts: ios
   connection: network_cli
   ios_vlans:
     config:
