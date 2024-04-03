@@ -3,7 +3,7 @@
   hosts: ios
   connection: network_cli
   ios_vlans:
-    config:
+  config:
       - name: Vlan_10
         vlan_id: 10
         state: active
@@ -18,7 +18,7 @@
         vlan_id: 30
         state: suspend
         shutdown: enabled
-    state: merged
+  state: merged
     
 
 
